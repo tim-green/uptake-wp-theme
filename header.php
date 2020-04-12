@@ -18,28 +18,77 @@
 
 <a href="#main" class="sr-only sr-only-focusable"><?php _e( 'Skip to main content', 'my-theme' ); ?></a>
 
-<div id="wrapper">
-
+<div class="as-mainwrapper">
+	<div class="bg-white">
 	<header>
-		<nav id="header" class="navbar navbar-expand-md <?php echo $navbar_scheme; if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
+		<div class="header-top">
 			<div class="container">
-				<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php
-						$header_logo = get_theme_mod( 'header_logo' ); // get custom meta-value
+				<div class="row">
+					<div class="col-lg-7 col-md-6 col-sm-5 hidden-xs">
+						<?php include('inc/theme-options/header-top-left.php'); ?>
+					</div>
+					<div class="col-lg-5 col-md-6 col-sm-7 col-xs-12">
+						<div class="header-top-right">
+						<?php include('inc/theme-options/header-top-right.php'); ?>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.container -->
+		</div>
 
-						if ( ! empty( $header_logo ) ) :
-					?>
-						<img src="<?php echo esc_url( $header_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-					<?php
-						else :
-							echo esc_attr( get_bloginfo( 'name', 'display' ) );
-						endif;
-					?>
-				</a>
-
+		<div class="header-logo-menu sticker">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-12">
+						<div class="logo">
+						<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<?php if( get_field('site_logo','option') ): ?>
+						<img src="<?php the_field('site_logo','option'); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					<?php endif; ?>
+				</a>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="mainmenu-area pull-right">
+							<div class="mainmenu hidden-sm hidden-xs">
+					<nav>
+						<?php
+								/** Loading WordPress Custom Menu (theme_location) **/
+								wp_nav_menu( array(
+									'theme_location'  => 'main-menu',
+									'container'       => '',
+									'menu_id'      	  => 'nav',
+									'menu_class'	  =>'',
+									'walker'          => new WP_Bootstrap_Navwalker(),
+								) );
+							?>
+					</nav>
+							</div>
+							
+							<ul class="header-search">
+								<li class="search-menu">
+								<i id="toggle-search" class="zmdi zmdi-search-for"></i>
+								</li>
+							</ul>
+						<!--Search Form-->		
+							<div class="search">
+								<div class="search-form">
+									<form method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+									<input type="search" placeholder="Search here..." name="search" />
+										<button type="submit">
+										<span><i class="fa fa-search"></i></span>
+										</button>
+									</form>
+								</div>
+							</div>
+							<!--Search Form-->
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>  	
 	</header>
-	
+	<?php
 	<main id="main" class="container"<?php if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' style="padding-top: 100px;"'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' style="padding-bottom: 100px;"'; endif; ?>>
 		
 		<?php
