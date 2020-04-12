@@ -7,9 +7,9 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: [
-        'Gruntfile.js',
-        'assets/js/**/*.js',
-        '!assets/build/app.min.js'
+        //'Gruntfile.js',
+        //'assets/js/**/*.js',
+        //'!assets/build/app.min.js'
       ]
     },
     sass: {
@@ -29,9 +29,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'assets/build/app.min.js': [
-            'assets/js/app.js'
-          ]
+          'assets/build/app.min.js': ['assets/js/app.js','assets/js/plugins/slick-slider/slick.min.js','assets/js/plugins/plugins.js']
         },
         options: {
           sourceMap: 'assets/build/app.min.js.map',
