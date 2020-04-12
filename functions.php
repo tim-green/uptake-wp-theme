@@ -15,6 +15,7 @@ $theme_version = '1.1.0';
 	}
 
 
+
 	/**
 	 * Include Support for wordpress.com-specific functions.
 	 * 
@@ -499,13 +500,48 @@ $theme_version = '1.1.0';
 
 		// 2. Scripts
 		wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), $theme_version, true );
-		wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/assets/js/main.min.js', false, $theme_version, true );
-
 		wp_enqueue_script( 'bootstrapjsCDN', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', false, $theme_version, true );
 		wp_enqueue_script( 'popperCDN', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', false, $theme_version, true );
+		wp_enqueue_script( 'fontawesome',  'https://kit.fontawesome.com/c20cab8581.js', false, $theme_version, true );
+		wp_enqueue_script( 'appjs', get_template_directory_uri() . '/assets/build/app.min.js', false, $theme_version, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'themes_starter_scripts_loader' );
+
+	/**
+	 * Advanced Custom Fields
+	 * Theme Options
+	 * @since v1.0
+	 */
+	if( function_exists('acf_add_options_page') ) {
+	
+		acf_add_options_page(array(
+			'page_title' 	=> 'Uptake Global Options',
+			'menu_title'	=> 'Uptake Options',
+			'menu_slug' 	=> 'uptake-general-settings',
+			'capability'	=> 'edit_posts',
+			'redirect'		=> false
+		));
+		
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Uptake Header Settings',
+			'menu_title'	=> 'Header',
+			'parent_slug'	=> 'uptake-general-settings',
+		));
+		
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Uptake Footer Settings',
+			'menu_title'	=> 'Footer',
+			'parent_slug'	=> 'uptake-general-settings',
+		));
+
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Slider',
+			'menu_title'	=> 'Slider - Home Page',
+			'parent_slug'	=> 'uptake-general-settings',
+		));
+		
+	}
