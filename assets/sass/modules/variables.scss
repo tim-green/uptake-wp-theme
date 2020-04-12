@@ -60,36 +60,78 @@ $color-primary: #000;
 //Black
 $black: #000;
 $medium-black: #1d1d1d;
-$darker-gray: #272727;
-$dark-gray:#101010;
+$very-light-black: #4c4c4c;
+
+//Gray
+$darker-gray: #222222;
+$darkest-gray: #696969;
+$very-dark-gray: #666666;
+$dark-gray:#909090;
 $medium-gray: #888;
-$light-gray: #d1d1d1;
+$medium-gray-tint: #6b6b6b;
+$light-gray: #f8f8f8;
+$very-light-gray: #f6f6f6;
+$off-gray: #b2b2b2;
 
 //White
 $white: #fff;
-
+$soft-white: #f0f0f0;
+$off-white: #eaeaea;
 //Red
 $soft-red: #dc535b;
 $medium-red: #c9373f;
 
 //Blue
+$very-grayish-blue: #5A6271;
+$grayish-blue: #4e4f54;
+$dark-blue: #2d3e50;
 $aqua: #00add0;
+
+//Orange
+$orange: #F47E1E;
+
+//Yellow
+$yellow: #f3c30b;
+
 //Purple
 $magenta: #930f5b;
+
+
+//Green
+$dark-green:#7a9757;
+$medium-green: #86bc42;
 
 // Base
 
 $base-line-height: 1.7;
 
 //Google font
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+// Raleway
+@import "https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800";
+// Montserrat
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900";
 
-//Typekit font
+//Material Design Icon font
+@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css";
+
+//jQuery UI
+@import "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css";
+
+//jquery.mb.YTPlayer
+@import "https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.1/css/jquery.mb.YTPlayer.min.css";
+
 
 //Fonts
 $font-stack: Helvetica, sans-serif;
 $roboto-slab: 'Roboto Slab', serif;   
-$open-sans: 'Open Sans', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+$raleway: 'raleway', sans-serif;
+$md-iconic: 'Material-Design-Iconic-Font';
+
+//FontAwesome
+$fa: 'Font Awesome 5 Free';
+$fab: 'Font Awesome 5 Brands';
+$fad: 'Font Awesome 5 Duotone';
 
 // Weights
 $hairline-weight: 100;
@@ -107,3 +149,17 @@ $text-cap: capitalize;
 $text-lower: lowercase;
 $text-upper: uppercase;
 $text-none: none;
+
+//Floats
+$f-left:  left;
+$f-right: right;
+$f-none: none;
+
+//Margins
+$no-margins: 0;
+
+//Padding
+$no-padding: 0;
+
+//Display
+$no-dispplay: none;
