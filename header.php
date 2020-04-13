@@ -36,10 +36,10 @@
 			</div><!-- /.container -->
 		</div>
 
-		<div class="header-logo-menu sticker">
+		<div class="header-logo-menu stick">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 col-sm-12">
+					<div class="col-md-4 col-sm-12">
 						<div class="logo">
 						<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php if( get_field('site_logo','option') ): ?>
