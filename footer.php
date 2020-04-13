@@ -13,45 +13,56 @@
 
 	</main><!-- /#main -->
 
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<p>&copy; <?php echo date( 'Y' ); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
-				</div>
-				
-				<?php
-					if ( has_nav_menu( 'footer-menu' ) ) : // see function register_nav_menus() in functions.php
-						/*
-							Loading WordPress Custom Menu (theme_location) ... remove <div> <ul> containers and show only <li> items!!!
-							Menu name taken from functions.php!!! ... register_nav_menu( 'footer-menu', 'Footer Menu' );
-							!!! IMPORTANT: After adding all pages to the menu, don't forget to assign this menu to the Footer menu of "Theme locations" /wp-admin/nav-menus.php (on left side) ... Otherwise the themes will not know, which menu to use!!!
-						*/
-						wp_nav_menu( array(
-							'theme_location'  => 'footer-menu',
-							'container'       => 'nav',
-							'container_class' => 'col-md-6',
-							'fallback_cb'     => '',
-							'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
-							//'fallback_cb'    => 'WP_Bootstrap4_Navwalker_Footer::fallback',
-							'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
-						) );
-					endif;
-				?>
-
-				<?php if ( is_active_sidebar( 'third_widget_area' ) ) : ?>
-					<div class="col-md-12">
-						<?php dynamic_sidebar( 'third_widget_area' ); ?>
-
-						<?php if ( current_user_can( 'manage_options' ) ) : ?>
-							<p class="edit-link"><a href="<?php echo admin_url( 'widgets.php' ); ?>" class="badge badge-secondary"><?php _e( 'Edit', 'my-theme' ); ?></a></p><!-- Show Edit Widget link -->
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
-			</div><!-- /.row -->
-		</div><!-- /.container -->
-	</footer><!-- /#footer -->
-	
+<!--Footer Widget Area Start-->
+<div class="footer-widget-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4">
+                <div class="single-footer-widget">
+                    <div class="footer-logo">
+                    </div>
+                    <div class="social-icons">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="single-footer-widget">
+                    <h3>GET IN TOUCH</h3>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-sm">
+                <div class="single-footer-widget">
+                    <h3>Useful Links</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="single-footer-widget">
+                    <h3>Instagram</h3>
+                    <div class="instagram-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Footer Widget Area-->
+<!--Footer Area Start-->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-7">
+                <p>&copy; <?php echo date( 'Y' ); ?> <?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></p>
+            </div>
+            <div class="col-md-6 col-sm-5">
+                <div class="column-right">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--End of Footer Area-->
+</div>
 </div><!-- /#wrapper -->
 
 <?php wp_footer(); ?>
