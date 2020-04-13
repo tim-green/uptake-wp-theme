@@ -41,7 +41,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-12">
 						<div class="logo">
-						<a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php if( get_field('site_logo','option') ): ?>
 						<img src="<?php the_field('site_logo','option'); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					<?php endif; ?>
