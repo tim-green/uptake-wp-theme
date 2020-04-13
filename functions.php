@@ -147,11 +147,7 @@ $theme_version = '1.1.0';
 	}
 
 
-	/**
-	 * Disable comments for Media (Image-Post, Jetpack-Carousel, etc.)
-	 *
-	 * @since v1.0
-	 */
+	  
 	function themes_starter_filter_media_comment_status( $open, $post_id = null ) {
 		$media_post = get_post( $post_id );
 		if ( 'attachment' === $media_post->post_type ) {
@@ -511,6 +507,13 @@ $theme_version = '1.1.0';
 	}
 	add_action( 'wp_enqueue_scripts', 'themes_starter_scripts_loader' );
 
+	/**
+	 * Registering additional new image sizes. 
+	 *
+	 * @since v1.0
+	 */
+
+	 //Home page slider image
 	/**
 	 * Advanced Custom Fields
 	 * Theme Options
