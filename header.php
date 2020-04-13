@@ -48,8 +48,8 @@
 				</a>
 						</div>
 					</div>
-					<div class="col-md-9">
-						<div class="mainmenu-area pull-right">
+					<div class="col-md-8">
+						<div class="mainmenu-area float-right">
 							<div class="mainmenu hidden-sm hidden-xs">
 					<nav>
 						<?php
