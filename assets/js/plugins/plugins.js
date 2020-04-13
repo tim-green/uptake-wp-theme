@@ -1,6 +1,16 @@
 (function ($) {
     "use strict";
 
+  //Make menu sticky
+  $(window).on('scroll',function() {
+    if ($(this).scrollTop() > 1){  
+        $('.stick').addClass("stuck");
+    }   
+    else{
+        $('.stick').removeClass("stuck");
+    }
+});
+
   // Handle click on toggle search button
   $('.header-search').on('click', function() {
     $('.search').toggleClass('open');
