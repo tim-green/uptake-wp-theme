@@ -11,9 +11,10 @@
 $(window).load(function() {
   $('.home-slider').slick({
     infinite: true,
-    respondTo: 'window',
-    lazyLoad: 'progressive',
-    slidesToShow: 1,
+    //respondTo: 'window',
+    //slidesToShow: 1,
+    fade: true,
+    cssEase: 'linear',
     // dots: true,
     // autoplay: true,
     // autoplaySpeed: 2000,
@@ -21,3 +22,7 @@ $(window).load(function() {
 });
 
 })(jQuery); 
+
+window.FontAwesomeConfig = {
+  searchPseudoElements: true
+}
