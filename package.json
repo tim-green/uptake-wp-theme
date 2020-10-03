@@ -35,6 +35,7 @@
     "jquery": ">=3.5.1",
     "load-grunt-tasks": "^5.1.0",
     "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "pixrem": "^5.0.0",
     "popper.js": "^1.16.1",
     "postcss": "^7.0.27"
